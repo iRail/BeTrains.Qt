@@ -35,7 +35,7 @@ Application::Application(int & argc, char ** argv) : QApplication(argc, argv), m
     // Translate the user interface
     Q_INIT_RESOURCE(translations);
     QTranslator tTranslator;
-    tTranslator.load(settings().value("application/language", QLocale::system().name()).toString(), ":/translations");
+    tTranslator.load(settings().value("application/language", QLocale::system().name()).toString(), ":/alpha_i18n");
     installTranslator(&tTranslator);
 
     // Construct the controllers
