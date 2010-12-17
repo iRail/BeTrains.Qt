@@ -8,8 +8,7 @@ DEPENDPATH += $$PWD
 
 QT       += gui
 
-RESOURCES += ui.qrc \
-    alpha_i18n.qrc
+RESOURCES += alpha_i18n.qrc
 SOURCES += application.cpp \
     ui/screens/maincontroller.cpp \
     ui/dialogs/stationchooser.cpp \
