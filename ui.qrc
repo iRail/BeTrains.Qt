@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>ui/assets/icons/train.png</file>
+        <file>ui/assets/icons/liveboard.png</file>
+        <file>ui/assets/loader.png</file>
+        <file>ui/assets/swap.png</file>
+        <file>ui/assets/favourite.svg</file>
+    </qresource>
+</RCC>
