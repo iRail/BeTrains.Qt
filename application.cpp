@@ -33,9 +33,9 @@ Application::Application(int & argc, char ** argv) : QApplication(argc, argv), m
     setApplicationVersion("0.99");
 
     // Translate the user interface
-    Q_INIT_RESOURCE(alpha_i18n);
+    Q_INIT_RESOURCE(i18n_alpha);
     QTranslator tTranslator;
-    tTranslator.load(settings().value("application/language", QLocale::system().name()).toString(), ":/alpha_i18n");
+    tTranslator.load(settings().value("application/language", QLocale::system().name()).toString(), ":/i18n_alpha");
     installTranslator(&tTranslator);
 
     // Construct the controllers

@@ -8,7 +8,10 @@ DEPENDPATH += $$PWD
 
 QT       += gui
 
-RESOURCES += alpha_i18n.qrc
+RESOURCES += i18n_alpha.qrc
+TRANSLATIONS += \
+    i18n_alpha/nl_BE.ts \
+    i18n_alpha/en_US.ts
 SOURCES += application.cpp \
     ui/screens/maincontroller.cpp \
     ui/dialogs/stationchooser.cpp \
@@ -56,7 +59,4 @@ HEADERS += \
     ui/dialogs/about.h \
     ui/auxiliary/delegates/requestdelegate.h \
     ui/screens/genericcontroller.h
-TRANSLATIONS += \
-    alpha_i18n/nl_BE.ts \
-    alpha_i18n/en_US.ts
 
