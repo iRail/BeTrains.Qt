@@ -14,9 +14,9 @@
 #include <QTimer>
 #include "cachedapi.h"
 #include "api/storage/serializedstorage.h"
-#include "ui/screens/maincontroller.h"
-#include "ui/screens/liveboardcontroller.h"
-#include "ui/screens/requestcontroller.h"
+#include "ui/maincontroller.h"
+#include "ui/liveboardcontroller.h"
+#include "ui/requestcontroller.h"
 
 namespace iRail
 {

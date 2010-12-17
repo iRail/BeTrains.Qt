@@ -37,8 +37,8 @@
 <context>
     <name>iRail::ConnectionController</name>
     <message>
-        <location filename="../ui/screens/connectioncontroller.cpp" line="97"/>
-        <location filename="../ui/screens/connectioncontroller.cpp" line="108"/>
+        <location filename="../ui/connectioncontroller.cpp" line="97"/>
+        <location filename="../ui/connectioncontroller.cpp" line="108"/>
         <source>unknown error</source>
         <translation>onbekende fout</translation>
     </message>
@@ -110,12 +110,12 @@
 <context>
     <name>iRail::ConnectionView</name>
     <message>
-        <location filename="../ui/screens/connectionview.cpp" line="106"/>
+        <location filename="../ui/connectionview.cpp" line="106"/>
         <source>Connections</source>
         <translation>Verbindingen</translation>
     </message>
     <message>
-        <location filename="../ui/screens/connectionview.cpp" line="157"/>
+        <location filename="../ui/connectionview.cpp" line="157"/>
         <source>No connections found.</source>
         <translation>Geen verbindingen gevonden.</translation>
     </message>
@@ -123,7 +123,7 @@
 <context>
     <name>iRail::GenericView</name>
     <message>
-        <location filename="../ui/screens/genericview.cpp" line="71"/>
+        <location filename="../ui/genericview.cpp" line="71"/>
         <source>Error: </source>
         <translation>Fout: </translation>
     </message>
@@ -131,8 +131,8 @@
 <context>
     <name>iRail::LiveboardController</name>
     <message>
-        <location filename="../ui/screens/liveboardcontroller.cpp" line="123"/>
-        <location filename="../ui/screens/liveboardcontroller.cpp" line="134"/>
+        <location filename="../ui/liveboardcontroller.cpp" line="123"/>
+        <location filename="../ui/liveboardcontroller.cpp" line="134"/>
         <source>unknown error</source>
         <translation>onbekende fout</translation>
     </message>
@@ -161,32 +161,32 @@
 <context>
     <name>iRail::LiveboardView</name>
     <message>
-        <location filename="../ui/screens/liveboardview.cpp" line="96"/>
+        <location filename="../ui/liveboardview.cpp" line="96"/>
         <source>The liveboard seems to be empty.</source>
         <translation>Geen gegevens gevonden.</translation>
     </message>
     <message>
-        <location filename="../ui/screens/liveboardview.cpp" line="100"/>
+        <location filename="../ui/liveboardview.cpp" line="100"/>
         <source>No new items received.</source>
         <translation>Geen nieuwe gegevens ontvangen.</translation>
     </message>
     <message>
-        <location filename="../ui/screens/liveboardview.cpp" line="193"/>
+        <location filename="../ui/liveboardview.cpp" line="193"/>
         <source>Departures</source>
         <translation>Vertrekken</translation>
     </message>
     <message>
-        <location filename="../ui/screens/liveboardview.cpp" line="217"/>
+        <location filename="../ui/liveboardview.cpp" line="217"/>
         <source>No departures to be shown.</source>
         <translation>Niks te tonen.</translation>
     </message>
     <message>
-        <location filename="../ui/screens/liveboardview.cpp" line="234"/>
+        <location filename="../ui/liveboardview.cpp" line="234"/>
         <source>Station</source>
         <translation>Station</translation>
     </message>
     <message>
-        <location filename="../ui/screens/liveboardview.cpp" line="290"/>
+        <location filename="../ui/liveboardview.cpp" line="290"/>
         <source>More</source>
         <translation>Meer</translation>
     </message>
@@ -194,7 +194,7 @@
 <context>
     <name>iRail::MainController</name>
     <message>
-        <location filename="../ui/screens/maincontroller.cpp" line="180"/>
+        <location filename="../ui/maincontroller.cpp" line="180"/>
         <source>unknown error</source>
         <translation>onbekende fout</translation>
     </message>
@@ -202,52 +202,52 @@
 <context>
     <name>iRail::MainView</name>
     <message>
-        <location filename="../ui/screens/mainview.cpp" line="95"/>
+        <location filename="../ui/mainview.cpp" line="95"/>
         <source>No history or favorites</source>
         <translation>Geen geschiedenis of favorieten</translation>
     </message>
     <message>
-        <location filename="../ui/screens/mainview.cpp" line="112"/>
+        <location filename="../ui/mainview.cpp" line="112"/>
         <source>Plan a journey</source>
         <translation>Plan een reis</translation>
     </message>
     <message>
-        <location filename="../ui/screens/mainview.cpp" line="118"/>
+        <location filename="../ui/mainview.cpp" line="118"/>
         <source>View departures</source>
         <translation>Bekijk vertrekken</translation>
     </message>
     <message>
-        <location filename="../ui/screens/mainview.cpp" line="139"/>
+        <location filename="../ui/mainview.cpp" line="139"/>
         <source>&amp;Tools</source>
         <translation>E&amp;xtra</translation>
     </message>
     <message>
-        <location filename="../ui/screens/mainview.cpp" line="140"/>
+        <location filename="../ui/mainview.cpp" line="140"/>
         <source>&amp;Preferences</source>
         <translation>&amp;Voorkeuren</translation>
     </message>
     <message>
-        <location filename="../ui/screens/mainview.cpp" line="141"/>
+        <location filename="../ui/mainview.cpp" line="141"/>
         <source>&amp;Clear history</source>
         <translation>&amp;Geschiedenis wissen</translation>
     </message>
     <message>
-        <location filename="../ui/screens/mainview.cpp" line="144"/>
+        <location filename="../ui/mainview.cpp" line="144"/>
         <source>&amp;Help</source>
         <translation>&amp;Help</translation>
     </message>
     <message>
-        <location filename="../ui/screens/mainview.cpp" line="145"/>
+        <location filename="../ui/mainview.cpp" line="145"/>
         <source>&amp;About</source>
         <translation>&amp;Over</translation>
     </message>
     <message>
-        <location filename="../ui/screens/mainview.cpp" line="202"/>
+        <location filename="../ui/mainview.cpp" line="202"/>
         <source>Remove from favourites</source>
         <translation>Verwijderen uit favorieten</translation>
     </message>
     <message>
-        <location filename="../ui/screens/mainview.cpp" line="207"/>
+        <location filename="../ui/mainview.cpp" line="207"/>
         <source>Add to favourites</source>
         <translation>Toevoegen aan favorieten</translation>
     </message>
@@ -255,7 +255,7 @@
 <context>
     <name>iRail::RequestController</name>
     <message>
-        <location filename="../ui/screens/requestcontroller.cpp" line="99"/>
+        <location filename="../ui/requestcontroller.cpp" line="99"/>
         <source>unknown error</source>
         <translation>onbekende fout</translation>
     </message>
@@ -296,52 +296,52 @@
 <context>
     <name>iRail::RequestView</name>
     <message>
-        <location filename="../ui/screens/requestview.cpp" line="91"/>
+        <location filename="../ui/requestview.cpp" line="91"/>
         <source>Please fill in both locations.</source>
         <translation>Gelieve beide locaties in te vullen.</translation>
     </message>
     <message>
-        <location filename="../ui/screens/requestview.cpp" line="185"/>
+        <location filename="../ui/requestview.cpp" line="185"/>
         <source>New query</source>
         <translation>Nieuwe opzoeking</translation>
     </message>
     <message>
-        <location filename="../ui/screens/requestview.cpp" line="199"/>
+        <location filename="../ui/requestview.cpp" line="199"/>
         <source>Origin</source>
         <translation>Vertrekplaats</translation>
     </message>
     <message>
-        <location filename="../ui/screens/requestview.cpp" line="209"/>
+        <location filename="../ui/requestview.cpp" line="209"/>
         <source>Destination</source>
         <translation>Bestemming</translation>
     </message>
     <message>
-        <location filename="../ui/screens/requestview.cpp" line="234"/>
+        <location filename="../ui/requestview.cpp" line="234"/>
         <source>Departure</source>
         <translation>Vertrek</translation>
     </message>
     <message>
-        <location filename="../ui/screens/requestview.cpp" line="235"/>
+        <location filename="../ui/requestview.cpp" line="235"/>
         <source>Arrival</source>
         <translation>Aankomst</translation>
     </message>
     <message>
-        <location filename="../ui/screens/requestview.cpp" line="246"/>
+        <location filename="../ui/requestview.cpp" line="246"/>
         <source>Specify time and date</source>
         <translation>Specifiëer tijd en datum</translation>
     </message>
     <message>
-        <location filename="../ui/screens/requestview.cpp" line="284"/>
+        <location filename="../ui/requestview.cpp" line="284"/>
         <source>Clear</source>
         <translation>Wissen</translation>
     </message>
     <message>
-        <location filename="../ui/screens/requestview.cpp" line="285"/>
+        <location filename="../ui/requestview.cpp" line="285"/>
         <source>Set to now</source>
         <translation>Gebruik huidige tijd</translation>
     </message>
     <message>
-        <location filename="../ui/screens/requestview.cpp" line="286"/>
+        <location filename="../ui/requestview.cpp" line="286"/>
         <source>Search</source>
         <translation>Zoeken</translation>
     </message>
@@ -362,8 +362,8 @@
 <context>
     <name>iRail::VehicleController</name>
     <message>
-        <location filename="../ui/screens/vehiclecontroller.cpp" line="82"/>
-        <location filename="../ui/screens/vehiclecontroller.cpp" line="93"/>
+        <location filename="../ui/vehiclecontroller.cpp" line="82"/>
+        <location filename="../ui/vehiclecontroller.cpp" line="93"/>
         <source>unknown error</source>
         <translation>onbekende fout</translation>
     </message>
@@ -392,7 +392,7 @@
 <context>
     <name>iRail::VehicleView</name>
     <message>
-        <location filename="../ui/screens/vehicleview.cpp" line="92"/>
+        <location filename="../ui/vehicleview.cpp" line="92"/>
         <source>Connection detail</source>
         <translation>Verbindingsdetail</translation>
     </message>
