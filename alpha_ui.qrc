@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>alpha_ui/assets/icons/train.png</file>
+        <file>alpha_ui/assets/icons/liveboard.png</file>
+        <file>alpha_ui/assets/loader.png</file>
+        <file>alpha_ui/assets/swap.png</file>
+        <file>alpha_ui/assets/favourite.svg</file>
+    </qresource>
+</RCC>
