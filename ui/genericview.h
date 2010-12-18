@@ -8,24 +8,18 @@
 
 // Inclused
 #include <QDebug>
-#include "ui/auxiliary/loaderwidget.h"
 #include <QString>
 #include <QMainWindow>
-#include <QGraphicsView>
 
 namespace iRail
 {
     class GenericView : public QMainWindow
     {
     Q_OBJECT
-    public:
-        GenericView();
-        ~GenericView();
-
         // Controller actions
     public slots:
         /*!
-          The reset() function resets the view to pristing state, removing all
+          The reset() function reverts the view to a pristine state, removing all
           previously entered or changed user data. It is called when re-using a
           already instantiated view, so it should not remove previously fetched
           data as load() won't be called again.
@@ -39,19 +33,10 @@ namespace iRail
           TODO: what if only a parameterised load()?
           */
         //virtual void load();
-        void showError(const QString& iError);
-        void startLoader();
-        void stopLoader();
-        void showProgress();
-
-        // UI events
-    private slots:
-        void _deleteLoader();
-
-    private:
-        // UI members
-        LoaderWidget* mLoader;
-        QGraphicsView* mView;
+        virtual void showError(const QString& iError) = 0;
+        virtual void startLoader() = 0;
+        virtual void stopLoader() = 0;
+        virtual void showProgress() = 0;
     };
 }
 

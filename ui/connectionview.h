@@ -11,53 +11,25 @@
 #include "api/connection.h"
 #include "api/connectionrequest.h"
 #include "genericview.h"
-#include <QVBoxLayout>
-#include <QModelIndex>
-#include <QTreeView>
-#include <QStandardItemModel>
 
 namespace iRail
 {
-    class ConnectionView : public GenericView
+    class ConnectionView : virtual public GenericView
     {
 
     Q_OBJECT
-    public:
-        ConnectionView();
-
-        // Temporary data
-        QList<ConnectionPointer>* tConnections;
-
-        // UI events
-    private slots:
-        void do_lstConnections_activated(QModelIndex iIndex);
-
         // Controller actions
     public slots:
-        void reset();
-        void load(ConnectionRequestPointer iConnectionRequest);
-        void setStations(QMap<QString, StationPointer>* iStations);
-        void setConnections(QList<ConnectionPointer>* iConnections);
+        virtual void reset() = 0;
+        virtual void load(ConnectionRequestPointer iConnectionRequest) = 0;
+        virtual void setStations(QMap<QString, StationPointer>* iStations) = 0;
+        virtual void setConnections(QList<ConnectionPointer>* iConnections) = 0;
 
         // Controller signals
     signals:
         void downloadStations();
         void downloadConnections(ConnectionRequestPointer iConnectionRequest);
         void launchVehicle(Connection::Line iConnectionLine);
-
-    private:
-        // Member data
-        QMap<QString, StationPointer> mStations;
-
-        // Initialization
-        void init_ui();
-
-        // UI members
-        QTreeView *mView;
-        QStandardItemModel *mModel;
-
-        // Auxiliary
-        void populateModel(const QList<ConnectionPointer>& iConnections);
     };
 }
 

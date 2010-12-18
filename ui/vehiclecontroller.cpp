@@ -16,10 +16,6 @@ using namespace iRail;
 VehicleController::VehicleController(CachedAPI* iAPI, QWidget* iParent) : GenericController(iAPI, iParent)
 {
     qDebug() << "+ " << Q_FUNC_INFO;
-
-    setView(new VehicleView());
-    connect(view(), SIGNAL(downloadStations()), this, SLOT(_downloadStations()));
-    connect(view(), SIGNAL(downloadVehicle(QString)), this, SLOT(_downloadVehicle(QString)));
 }
 
 VehicleController::~VehicleController()
@@ -42,6 +38,9 @@ VehicleView* VehicleController::view() const
 void VehicleController::setView(GenericView* iView)
 {
     mView = dynamic_cast<VehicleView*>(iView);
+
+    connect(view(), SIGNAL(downloadStations()), this, SLOT(_downloadStations()));
+    connect(view(), SIGNAL(downloadVehicle(QString)), this, SLOT(_downloadVehicle(QString)));
 }
 
 void VehicleController::showView(GenericController* parent, Connection::Line iConnectionLine)

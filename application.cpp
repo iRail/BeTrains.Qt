@@ -45,18 +45,6 @@ Application::Application(int & argc, char ** argv) : QApplication(argc, argv), m
     mConnection = new ConnectionController(&mAPI);
     mVehicle = new VehicleController(&mAPI);
 
-    // Connect them
-    connect(mMain, SIGNAL(launchLiveboard()), this, SLOT(_launchLiveboardFromMain()));
-    connect(mMain, SIGNAL(launchLiveboard(LiveboardRequestPointer)), this, SLOT(_launchLiveboardFromMain(LiveboardRequestPointer)));
-    connect(mLiveboard, SIGNAL(launchVehicle(QString,Liveboard::Departure)), this, SLOT(_launchVehicleFromLiveboard(QString,Liveboard::Departure)));
-    connect(mLiveboard, SIGNAL(launchLiveboard(LiveboardRequestPointer)), this, SLOT(_launchLiveboardFromLiveboard(LiveboardRequestPointer)));
-    connect(mMain, SIGNAL(launchRequest()), this, SLOT(_launchRequestFromMain()));
-    connect(mMain, SIGNAL(launchConnection(ConnectionRequestPointer)), this, SLOT(_launchConnectionFromMain(ConnectionRequestPointer)));
-    connect(mRequest, SIGNAL(launchConnection(ConnectionRequestPointer)), this, SLOT(_launchConnectionFromRequest(ConnectionRequestPointer)));
-    connect(mConnection, SIGNAL(launchVehicle(Connection::Line)), this, SLOT(_launchVehicleFromConnection(Connection::Line)));
-    QTimer::singleShot(0, this, SLOT(run()));
-    QObject::connect(this, SIGNAL(lastWindowClosed()), this, SLOT(close()));
-
     // Create directory structure
     mDataLocation = QDesktopServices::storageLocation(QDesktopServices::DataLocation);
     if (mDataLocation.isEmpty())
@@ -86,6 +74,54 @@ Application::~Application()
 {
     delete mMain;
     mInstance = NULL;
+}
+
+
+//
+// Application control
+//
+
+void Application::setMainView(MainView *iView)
+{
+    mMain->setView(iView);
+
+    connect(mMain, SIGNAL(launchLiveboard()), this, SLOT(_launchLiveboardFromMain()));
+    connect(mMain, SIGNAL(launchLiveboard(LiveboardRequestPointer)), this, SLOT(_launchLiveboardFromMain(LiveboardRequestPointer)));
+    connect(mMain, SIGNAL(launchRequest()), this, SLOT(_launchRequestFromMain()));
+    connect(mMain, SIGNAL(launchConnection(ConnectionRequestPointer)), this, SLOT(_launchConnectionFromMain(ConnectionRequestPointer)));
+}
+
+void Application::setLiveboardView(LiveboardView *iView)
+{
+    mLiveboard->setView(iView);
+
+    connect(mLiveboard, SIGNAL(launchVehicle(QString,Liveboard::Departure)), this, SLOT(_launchVehicleFromLiveboard(QString,Liveboard::Departure)));
+    connect(mLiveboard, SIGNAL(launchLiveboard(LiveboardRequestPointer)), this, SLOT(_launchLiveboardFromLiveboard(LiveboardRequestPointer)));
+}
+
+void Application::setRequestView(RequestView *iView)
+{
+    mRequest->setView(iView);
+
+    connect(mRequest, SIGNAL(launchConnection(ConnectionRequestPointer)), this, SLOT(_launchConnectionFromRequest(ConnectionRequestPointer)));
+}
+
+void Application::setConnectionView(ConnectionView *iView)
+{
+    mConnection->setView(iView);
+
+    connect(mConnection, SIGNAL(launchVehicle(Connection::Line)), this, SLOT(_launchVehicleFromConnection(Connection::Line)));
+}
+
+void Application::setVehicleView(VehicleView *iView)
+{
+    mVehicle->setView(iView);
+}
+
+void Application::start()
+{
+    QTimer::singleShot(0, this, SLOT(run()));
+    QObject::connect(this, SIGNAL(lastWindowClosed()), this, SLOT(close()));
 }
 
 

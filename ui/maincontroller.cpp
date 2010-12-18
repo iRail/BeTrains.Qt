@@ -17,17 +17,6 @@ using namespace iRail;
 MainController::MainController(CachedAPI* iAPI, QWidget* iParent) : GenericController(iAPI, iParent)
 {
     qDebug() << "+ " << Q_FUNC_INFO;
-
-    setView(new MainView());
-    connect(view(), SIGNAL(downloadStations()), this, SLOT(_downloadStations()));
-    connect(view(), SIGNAL(getHistoryFavourites()), this, SLOT(_getHistoryFavourites()));
-    connect(view(), SIGNAL(launchLiveboard()), this, SIGNAL(launchLiveboard()));
-    connect(view(), SIGNAL(launchLiveboard(LiveboardRequestPointer)), this, SIGNAL(launchLiveboard(LiveboardRequestPointer)));
-    connect(view(), SIGNAL(launchRequest()), this, SIGNAL(launchRequest()));
-    connect(view(), SIGNAL(launchConnection(ConnectionRequestPointer)), this, SIGNAL(launchConnection(ConnectionRequestPointer)));
-    connect(view(), SIGNAL(addFavourite(QVariant)), this, SLOT(_addFavourite(QVariant)));
-    connect(view(), SIGNAL(removeFavourite(QVariant)), this, SLOT(_removeFavourite(QVariant)));
-    connect(view(), SIGNAL(clearHistory()), this, SLOT(_clearHistory()));
 }
 
 MainController::~MainController()
@@ -50,6 +39,16 @@ MainView* MainController::view() const
 void MainController::setView(GenericView* iView)
 {
     mView = dynamic_cast<MainView*>(iView);
+
+    connect(view(), SIGNAL(downloadStations()), this, SLOT(_downloadStations()));
+    connect(view(), SIGNAL(getHistoryFavourites()), this, SLOT(_getHistoryFavourites()));
+    connect(view(), SIGNAL(launchLiveboard()), this, SIGNAL(launchLiveboard()));
+    connect(view(), SIGNAL(launchLiveboard(LiveboardRequestPointer)), this, SIGNAL(launchLiveboard(LiveboardRequestPointer)));
+    connect(view(), SIGNAL(launchRequest()), this, SIGNAL(launchRequest()));
+    connect(view(), SIGNAL(launchConnection(ConnectionRequestPointer)), this, SIGNAL(launchConnection(ConnectionRequestPointer)));
+    connect(view(), SIGNAL(addFavourite(QVariant)), this, SLOT(_addFavourite(QVariant)));
+    connect(view(), SIGNAL(removeFavourite(QVariant)), this, SLOT(_removeFavourite(QVariant)));
+    connect(view(), SIGNAL(clearHistory()), this, SLOT(_clearHistory()));
 }
 
 void MainController::showView(GenericController* parent)

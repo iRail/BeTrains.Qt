@@ -16,11 +16,6 @@ using namespace iRail;
 ConnectionController::ConnectionController(CachedAPI* iAPI, QWidget* iParent) : GenericController(iAPI, iParent)
 {
     qDebug() << "+ " << Q_FUNC_INFO;
-
-    setView(new ConnectionView());
-    connect(view(), SIGNAL(downloadStations()), this, SLOT(_downloadStations()));
-    connect(view(), SIGNAL(downloadConnections(ConnectionRequestPointer)), this, SLOT(_downloadConnections(ConnectionRequestPointer)));
-    connect(view(), SIGNAL(launchVehicle(Connection::Line)), this, SIGNAL(launchVehicle(Connection::Line)));
 }
 
 ConnectionController::~ConnectionController()
@@ -43,6 +38,10 @@ ConnectionView* ConnectionController::view() const
 void ConnectionController::setView(GenericView* iView)
 {
     mView = dynamic_cast<ConnectionView*>(iView);
+
+    connect(view(), SIGNAL(downloadStations()), this, SLOT(_downloadStations()));
+    connect(view(), SIGNAL(downloadConnections(ConnectionRequestPointer)), this, SLOT(_downloadConnections(ConnectionRequestPointer)));
+    connect(view(), SIGNAL(launchVehicle(Connection::Line)), this, SIGNAL(launchVehicle(Connection::Line)));
 }
 
 void ConnectionController::showView(GenericController* parent, ConnectionRequestPointer iConnectionRequest)

@@ -13,53 +13,25 @@
 #include "api/vehicle.h"
 #include "api/liveboard.h"
 #include "genericview.h"
-#include <QVBoxLayout>
-#include <QScrollArea>
-#include <QListView>
-#include <QStandardItemModel>
 
 namespace iRail
 {
-    class VehicleView : public GenericView
+    class VehicleView : virtual public GenericView
     {
 
     Q_OBJECT
     public:
-        VehicleView();
-        ~VehicleView();
-
-        // Temporary data
-        Connection::Line tLine;
-        VehiclePointer tVehicle;
-
-        // UI events
-    private slots:
-
         // Controller actions
     public slots:
-        void reset();
-        void load(Connection::Line iConnectionLine);
-        void setStations(QMap<QString, StationPointer>* iStations);
-        void setVehicle(VehiclePointer* iVehicles);
+        virtual void reset() = 0;
+        virtual void load(Connection::Line iConnectionLine) = 0;
+        virtual void setStations(QMap<QString, StationPointer>* iStations) = 0;
+        virtual void setVehicle(VehiclePointer* iVehicles) = 0;
 
         // Controller signals
     signals:
         void downloadStations();
         void downloadVehicle(QString iVehicleId);
-
-    private:
-        // Member data
-        QMap<QString, StationPointer> mStations;
-
-        // Initialization
-    private:
-        void init_ui();
-        void populateModel(Connection::Line iLine, VehiclePointer iVehicle);
-
-        // UI members
-    private:
-        QListView* mView;
-        QStandardItemModel* mModel;
     };
 }
 

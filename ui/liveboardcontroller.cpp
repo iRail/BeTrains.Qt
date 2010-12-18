@@ -16,18 +16,11 @@ using namespace iRail;
 LiveboardController::LiveboardController(CachedAPI* iAPI, QWidget* iParent) : GenericController(iAPI, iParent)
 {
     qDebug() << "+ " << Q_FUNC_INFO;
-
-    setView(new LiveboardView());
-    connect(view(), SIGNAL(downloadStations()), this, SLOT(_downloadStations()));
-    connect(view(), SIGNAL(downloadLiveboard(LiveboardRequestPointer)), this, SLOT(_downloadLiveboard(LiveboardRequestPointer)));
-    connect(view(), SIGNAL(launchVehicle(QString,Liveboard::Departure)), this, SIGNAL(launchVehicle(QString,Liveboard::Departure)));
 }
 
 LiveboardController::~LiveboardController()
 {
     qDebug() << "~ " << Q_FUNC_INFO;
-
-    delete view();
 }
 
 
@@ -38,6 +31,10 @@ LiveboardController::~LiveboardController()
 LiveboardView* LiveboardController::view() const
 {
     return mView;
+
+    connect(view(), SIGNAL(downloadStations()), this, SLOT(_downloadStations()));
+    connect(view(), SIGNAL(downloadLiveboard(LiveboardRequestPointer)), this, SLOT(_downloadLiveboard(LiveboardRequestPointer)));
+    connect(view(), SIGNAL(launchVehicle(QString,Liveboard::Departure)), this, SIGNAL(launchVehicle(QString,Liveboard::Departure)));
 }
 
 void LiveboardController::setView(GenericView* iView)

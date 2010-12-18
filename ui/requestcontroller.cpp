@@ -16,10 +16,6 @@ using namespace iRail;
 RequestController::RequestController(CachedAPI* iAPI, QWidget* iParent) : GenericController(iAPI, iParent)
 {
     qDebug() << "+ " << Q_FUNC_INFO;
-
-    setView(new RequestView());
-    connect(view(), SIGNAL(downloadStations()), this, SLOT(_downloadStations()));
-    connect(view(), SIGNAL(launchConnection(ConnectionRequestPointer)), this, SIGNAL(launchConnection(ConnectionRequestPointer)));
 }
 
 RequestController::~RequestController()
@@ -42,6 +38,9 @@ RequestView* RequestController::view() const
 void RequestController::setView(GenericView* iView)
 {
     mView = dynamic_cast<RequestView*>(iView);
+
+    connect(view(), SIGNAL(downloadStations()), this, SLOT(_downloadStations()));
+    connect(view(), SIGNAL(launchConnection(ConnectionRequestPointer)), this, SIGNAL(launchConnection(ConnectionRequestPointer)));
 }
 
 void RequestController::showView(GenericController* parent)

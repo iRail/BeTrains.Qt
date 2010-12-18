@@ -14,16 +14,10 @@ TRANSLATIONS += \
     i18n_alpha/en_US.ts
 SOURCES += application.cpp \
     ui/maincontroller.cpp \
-    ui/mainview.cpp \
     ui/liveboardcontroller.cpp \
-    ui/liveboardview.cpp \
-    ui/vehicleview.cpp \
     ui/vehiclecontroller.cpp \
     ui/connectioncontroller.cpp \
-    ui/connectionview.cpp \
     ui/requestcontroller.cpp \
-    ui/requestview.cpp \
-    ui/genericview.cpp \
     ui/genericcontroller.cpp
 HEADERS += application.h \
     ui/global.h \

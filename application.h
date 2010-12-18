@@ -29,9 +29,19 @@ namespace iRail
         ~Application();
 
         // Singleton objects
+    public:
         static Application *instance();
         static QSettings &settings();
         static Storage* storage();
+
+        // Application control
+    public:
+        void setMainView(MainView*);
+        void setLiveboardView(LiveboardView*);
+        void setRequestView(RequestView*);
+        void setConnectionView(ConnectionView*);
+        void setVehicleView(VehicleView*);
+        void start();
 
         // UI events
     public slots:
