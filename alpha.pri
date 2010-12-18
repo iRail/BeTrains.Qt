@@ -6,6 +6,8 @@
 INCLUDEPATH += $$PWD
 DEPENDPATH += $$PWD
 
+include(../libirail/libirail.pri)
+
 QT       += gui
 
 RESOURCES += i18n_alpha.qrc
