@@ -16,7 +16,7 @@
 
 namespace iRail
 {
-    class VehicleView : virtual public GenericView
+    class VehicleView : public GenericView
     {
     Q_OBJECT
     public:

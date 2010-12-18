@@ -14,7 +14,7 @@
 
 namespace iRail
 {
-    class ConnectionView : virtual public GenericView
+    class ConnectionView : public GenericView
     {
     Q_OBJECT
         // Controller actions

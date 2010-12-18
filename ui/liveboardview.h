@@ -15,7 +15,7 @@
 
 namespace iRail
 {
-    class LiveboardView : virtual public GenericView
+    class LiveboardView : public GenericView
     {
     Q_OBJECT
         // Controller actions
