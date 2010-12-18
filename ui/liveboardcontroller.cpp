@@ -31,15 +31,15 @@ LiveboardController::~LiveboardController()
 LiveboardView* LiveboardController::view() const
 {
     return mView;
-
-    connect(view(), SIGNAL(downloadStations()), this, SLOT(_downloadStations()));
-    connect(view(), SIGNAL(downloadLiveboard(LiveboardRequestPointer)), this, SLOT(_downloadLiveboard(LiveboardRequestPointer)));
-    connect(view(), SIGNAL(launchVehicle(QString,Liveboard::Departure)), this, SIGNAL(launchVehicle(QString,Liveboard::Departure)));
 }
 
 void LiveboardController::setView(GenericView* iView)
 {
     mView = dynamic_cast<LiveboardView*>(iView);
+
+    connect(view(), SIGNAL(downloadStations()), this, SLOT(_downloadStations()));
+    connect(view(), SIGNAL(downloadLiveboard(LiveboardRequestPointer)), this, SLOT(_downloadLiveboard(LiveboardRequestPointer)));
+    connect(view(), SIGNAL(launchVehicle(QString,Liveboard::Departure)), this, SIGNAL(launchVehicle(QString,Liveboard::Departure)));
 }
 
 void LiveboardController::showView(GenericController* parent)
