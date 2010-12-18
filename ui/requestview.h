@@ -19,7 +19,6 @@ namespace iRail
 {
     class RequestView : virtual public GenericView
     {
-
     Q_OBJECT
     public:
         // Controller actions

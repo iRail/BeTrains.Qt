@@ -19,7 +19,6 @@ namespace iRail
 {
     class MainView : virtual public GenericView
     {
-
     Q_OBJECT
         // Controller actions
     public slots:

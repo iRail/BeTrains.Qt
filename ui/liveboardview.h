@@ -17,7 +17,6 @@ namespace iRail
 {
     class LiveboardView : virtual public GenericView
     {
-
     Q_OBJECT
         // Controller actions
     public slots:
