@@ -63,6 +63,28 @@ void MainController::addHistory(QVariant iRequest)
 {
     qDebug() << "+ " << Q_FUNC_INFO;
 
+    // Check for duplicates
+    foreach (QVariant tRequest, mHistory)
+    {
+        if (iRequest.canConvert<LiveboardRequestPointer>() && tRequest.canConvert<LiveboardRequestPointer>())
+        {
+            LiveboardRequestPointer iLiveboardRequest = iRequest.value<LiveboardRequestPointer>(),
+                                    tLiveboardRequest = tRequest.value<LiveboardRequestPointer>();
+
+            if (iLiveboardRequest->station() == tLiveboardRequest->station())
+                mHistory.removeOne(tRequest);
+        }
+        else if (iRequest.canConvert<ConnectionRequestPointer>() && tRequest.canConvert<ConnectionRequestPointer>())
+        {
+            ConnectionRequestPointer iConnectionRequest = iRequest.value<ConnectionRequestPointer>(),
+                                     tConnectionRequest = tRequest.value<ConnectionRequestPointer>();
+
+            if (iConnectionRequest->origin() == tConnectionRequest->origin()
+                && iConnectionRequest->destination() == tConnectionRequest->destination())
+                mHistory.removeOne(tRequest);
+        }
+    }
+
     mHistory.push_front(iRequest);
 
     Application::storage()->setHistory(mHistory);
