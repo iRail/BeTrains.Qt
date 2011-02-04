@@ -22,7 +22,7 @@
 <context>
     <name>iRail::MainController</name>
     <message>
-        <location filename="../ui/maincontroller.cpp" line="150"/>
+        <location filename="../ui/maincontroller.cpp" line="172"/>
         <source>unknown error</source>
         <translation>onbekende fout</translation>
     </message>
