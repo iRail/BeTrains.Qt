@@ -25,7 +25,7 @@ namespace iRail
     Q_OBJECT
     public:
         // Construction and destruction
-        Application(int & argc, char ** argv);
+        Application(int & argc, char ** argv, QString iPlatform, QString iVersion);
         ~Application();
 
         // Singleton objects

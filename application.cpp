@@ -20,7 +20,7 @@ using namespace iRail;
 
 Application* Application::mInstance = NULL;
 
-Application::Application(int & argc, char ** argv) : QApplication(argc, argv), mAPI("Maemo", "0.99", &mStorage)
+Application::Application(int & argc, char ** argv, QString iPlatform, QString iVersion) : QApplication(argc, argv), mAPI(iPlatform, iVersion, &mStorage)
 {
     // Singleton assertion (well, some singleton-hybrid, to be fair)
     Q_ASSERT(mInstance == NULL);
@@ -30,7 +30,7 @@ Application::Application(int & argc, char ** argv) : QApplication(argc, argv), m
     setOrganizationName("iRail");
     setOrganizationDomain("irail.be");
     setApplicationName("BeTrains");
-    setApplicationVersion("0.99");
+    setApplicationVersion(iVersion);
 
     // Translate the user interface
     Q_INIT_RESOURCE(i18n_alpha);
