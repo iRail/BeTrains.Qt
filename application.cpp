@@ -34,14 +34,21 @@ Application::Application(int & argc, char ** argv, QString iPlatform, QString iV
 
     // Translate the application
     Q_INIT_RESOURCE(i18n_alpha);
-    QTranslator tTranslator;
-    tTranslator.load(settings().value("application/language", QLocale::system().name()).toString(), ":/i18n_alpha");
-    installTranslator(&tTranslator);
+    QTranslator *tApplicationTranslator = new QTranslator();
+    if (! tApplicationTranslator->load(settings().value("application/language", QLocale::system().name()).toString(), ":/i18n_alpha"))
+        qWarning() << "! " << "Application translation failed";
+    else
+        qDebug() << "- " << "Application translation succeeded";
+    installTranslator(tApplicationTranslator);
 
     // Translate the API
     Q_INIT_RESOURCE(i18n_libirail);
-    tTranslator.load(settings().value("application/language", QLocale::system().name()).toString(), ":/i18n_libirail");
-    installTranslator(&tTranslator);
+    QTranslator *tAPITranslator = new QTranslator();
+    if (! tAPITranslator->load(settings().value("application/language", QLocale::system().name()).toString(), ":/i18n_libirail"))
+        qWarning() << "! " << "API translation failed";
+    else
+        qDebug() << "- " << "API translation succeeded";
+    installTranslator(tAPITranslator);
 
     // Construct the controllers
     mMain = new MainController(&mAPI);
