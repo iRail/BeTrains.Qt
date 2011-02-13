@@ -32,10 +32,15 @@ Application::Application(int & argc, char ** argv, QString iPlatform, QString iV
     setApplicationName("BeTrains");
     setApplicationVersion(iVersion);
 
-    // Translate the user interface
+    // Translate the application
     Q_INIT_RESOURCE(i18n_alpha);
     QTranslator tTranslator;
     tTranslator.load(settings().value("application/language", QLocale::system().name()).toString(), ":/i18n_alpha");
+    installTranslator(&tTranslator);
+
+    // Translate the API
+    Q_INIT_RESOURCE(i18n_libirail);
+    tTranslator.load(settings().value("application/language", QLocale::system().name()).toString(), ":/i18n_libirail");
     installTranslator(&tTranslator);
 
     // Construct the controllers
