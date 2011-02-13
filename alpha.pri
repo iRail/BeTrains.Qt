@@ -12,8 +12,10 @@ QT       += gui
 
 RESOURCES += i18n_alpha.qrc
 TRANSLATIONS += \
-    i18n_alpha/nl_BE.ts \
-    i18n_alpha/en_US.ts
+    i18n_alpha/nl.ts \
+    i18n_alpha/fr.ts \
+    i18n_alpha/de.ts \
+    i18n_alpha/en.ts
 SOURCES += application.cpp \
     ui/maincontroller.cpp \
     ui/liveboardcontroller.cpp \
