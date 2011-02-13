@@ -32,7 +32,7 @@ namespace iRail
         void downloadStations();
         void getHistoryFavourites();
         void launchLiveboard();
-        void launchLiveboard(LiveboardRequestPointer iLiveboardRequest);
+        void launchLiveboardWithRequest(LiveboardRequestPointer iLiveboardRequest);
         void launchRequest();
         void launchConnection(ConnectionRequestPointer iConnectionRequest);
         void addFavourite(QVariant iRequest);

@@ -43,7 +43,7 @@ void MainController::setView(GenericView* iView)
     connect(view(), SIGNAL(downloadStations()), this, SLOT(_downloadStations()));
     connect(view(), SIGNAL(getHistoryFavourites()), this, SLOT(_getHistoryFavourites()));
     connect(view(), SIGNAL(launchLiveboard()), this, SIGNAL(launchLiveboard()));
-    connect(view(), SIGNAL(launchLiveboard(LiveboardRequestPointer)), this, SIGNAL(launchLiveboard(LiveboardRequestPointer)));
+    connect(view(), SIGNAL(launchLiveboardWithRequest(LiveboardRequestPointer)), this, SIGNAL(launchLiveboardWithRequest(LiveboardRequestPointer)));
     connect(view(), SIGNAL(launchRequest()), this, SIGNAL(launchRequest()));
     connect(view(), SIGNAL(launchConnection(ConnectionRequestPointer)), this, SIGNAL(launchConnection(ConnectionRequestPointer)));
     connect(view(), SIGNAL(addFavourite(QVariant)), this, SLOT(_addFavourite(QVariant)));

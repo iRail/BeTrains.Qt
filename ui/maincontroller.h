@@ -47,7 +47,7 @@ namespace iRail
         // Signals
     signals:
         void launchLiveboard();
-        void launchLiveboard(LiveboardRequestPointer iLiveboardRequest);
+        void launchLiveboardWithRequest(LiveboardRequestPointer iLiveboardRequest);
         void launchRequest();
         void launchConnection(ConnectionRequestPointer iConnectionRequest);
 

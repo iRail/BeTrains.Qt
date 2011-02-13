@@ -86,7 +86,7 @@ void Application::setMainView(MainView *iView)
     mMain->setView(iView);
 
     connect(mMain, SIGNAL(launchLiveboard()), this, SLOT(_launchLiveboardFromMain()));
-    connect(mMain, SIGNAL(launchLiveboard(LiveboardRequestPointer)), this, SLOT(_launchLiveboardFromMain(LiveboardRequestPointer)));
+    connect(mMain, SIGNAL(launchLiveboardWithRequest(LiveboardRequestPointer)), this, SLOT(_launchLiveboardFromMain(LiveboardRequestPointer)));
     connect(mMain, SIGNAL(launchRequest()), this, SLOT(_launchRequestFromMain()));
     connect(mMain, SIGNAL(launchConnection(ConnectionRequestPointer)), this, SLOT(_launchConnectionFromMain(ConnectionRequestPointer)));
 }
