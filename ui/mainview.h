@@ -24,8 +24,7 @@ namespace iRail
     public slots:
         virtual void reset() = 0;
         virtual void load() = 0;
-        virtual void load(const QMap<QString, StationPointer>& iStations) = 0;
-        virtual void load(const QList<QVariant>& iHistory, const QList<QVariant>& iFavourites) = 0;
+        virtual void setHistoryFavourites(const QList<QVariant>& iHistory, const QList<QVariant>& iFavourites) = 0;
         virtual void setStations(QMap<QString, StationPointer>* iStations) = 0;
 
         // Controller signals

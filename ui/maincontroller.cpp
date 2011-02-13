@@ -89,7 +89,7 @@ void MainController::addHistory(QVariant iRequest)
 
     Application::storage()->setHistory(mHistory);
 
-    view()->load(mHistory, mFavourites);
+    view()->setHistoryFavourites(mHistory, mFavourites);
 }
 
 
@@ -116,7 +116,7 @@ void MainController::_getHistoryFavourites()
     mHistory = Application::storage()->history();
     mFavourites = Application::storage()->favourites();
 
-    view()->load(mHistory, mFavourites);
+    view()->setHistoryFavourites(mHistory, mFavourites);
 
 }
 
@@ -130,7 +130,7 @@ void MainController::_addFavourite(QVariant iRequest)
     Application::storage()->setHistory(mHistory);
     Application::storage()->setFavourites(mFavourites);
 
-    view()->load(mHistory, mFavourites);
+    view()->setHistoryFavourites(mHistory, mFavourites);
 }
 
 void MainController::_removeFavourite(QVariant iRequest)
@@ -141,7 +141,7 @@ void MainController::_removeFavourite(QVariant iRequest)
 
     Application::storage()->setFavourites(mFavourites);
 
-    view()->load(mHistory, mFavourites);
+    view()->setHistoryFavourites(mHistory, mFavourites);
 }
 
 void MainController::_clearHistory()
@@ -152,7 +152,7 @@ void MainController::_clearHistory()
 
     Application::storage()->clearHistory();
 
-    view()->load(mHistory, mFavourites);
+    view()->setHistoryFavourites(mHistory, mFavourites);
 }
 
 
