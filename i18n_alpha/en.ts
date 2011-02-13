@@ -5,35 +5,35 @@
     <name>iRail::ConnectionController</name>
     <message>
         <source>unknown error</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>iRail::LiveboardController</name>
     <message>
         <source>unknown error</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>iRail::MainController</name>
     <message>
         <source>unknown error</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>iRail::RequestController</name>
     <message>
         <source>unknown error</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>iRail::VehicleController</name>
     <message>
         <source>unknown error</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 </TS>
