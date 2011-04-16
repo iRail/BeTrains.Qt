@@ -33,7 +33,6 @@ Application::Application(int & argc, char ** argv, QString iPlatform, QString iV
     setApplicationVersion(iVersion);
 
     // Translate the application
-    Q_INIT_RESOURCE(i18n_alpha);
     QTranslator *tApplicationTranslator = new QTranslator();
     if (! tApplicationTranslator->load(settings().value("application/language", QLocale::system().name()).toString(), ":/i18n_alpha"))
         qWarning() << "! " << "Application translation failed";
@@ -42,7 +41,6 @@ Application::Application(int & argc, char ** argv, QString iPlatform, QString iV
     installTranslator(tApplicationTranslator);
 
     // Translate the API
-    Q_INIT_RESOURCE(i18n_libirail);
     QTranslator *tAPITranslator = new QTranslator();
     if (! tAPITranslator->load(settings().value("application/language", QLocale::system().name()).toString(), ":/i18n_libirail"))
         qWarning() << "! " << "API translation failed";
