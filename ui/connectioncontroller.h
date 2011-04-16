@@ -29,6 +29,7 @@ namespace iRail
         // Generic interface
         ConnectionView* view() const;
         void setView(GenericView*);
+        using GenericController::showView;
         void showView(GenericController* parent, ConnectionRequestPointer iConnectionRequest);
 
         // View slots

@@ -29,6 +29,7 @@ namespace iRail
         // Generic interface
         VehicleView* view() const;
         void setView(GenericView*);
+        using GenericController::showView;
         void showView(GenericController* parent, Connection::Line iConnectionLine);
 
         // View slots

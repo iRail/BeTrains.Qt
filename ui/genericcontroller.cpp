@@ -13,7 +13,7 @@ using namespace iRail;
 // Construction and destruction
 //
 
-GenericController::GenericController(CachedAPI* iAPI, QWidget* iParent) : mAPI(iAPI)
+GenericController::GenericController(CachedAPI* iAPI, QWidget* iParent) : QObject(iParent), mAPI(iAPI)
 {
     qDebug() << "+ " << Q_FUNC_INFO;
 }
