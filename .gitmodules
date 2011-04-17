@@ -1,0 +1,3 @@
+[submodule "libqtrail"]
+	path = libqtrail
+	url = git@github.com:maleadt/libqtrail.git
