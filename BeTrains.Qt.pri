@@ -2,15 +2,13 @@
 # Base configuration
 #
 
-# Path configuration
-INCLUDEPATH += $$PWD
-DEPENDPATH += $$PWD
-
-include(../libirail/libirail.pri)
-
 QT       += gui
 
-RESOURCES += i18n_alpha.qrc
+DEPENDPATH += $$PWD/libqtrail
+INCLUDEPATH += $$PWD/libqtrail
+include(libqtrail/libqtrail.pri)
+
+RESOURCES += i18n_qt.qrc
 TRANSLATIONS += \
     i18n_alpha/nl.ts \
     i18n_alpha/fr.ts \
