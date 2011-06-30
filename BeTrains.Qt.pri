@@ -8,12 +8,6 @@ DEPENDPATH += $$PWD/libqtrail
 INCLUDEPATH += $$PWD/libqtrail
 include(libqtrail/libqtrail.pri)
 
-RESOURCES += i18n_qt.qrc
-TRANSLATIONS += \
-    i18n_qt/nl.ts \
-    i18n_qt/fr.ts \
-    i18n_qt/de.ts \
-    i18n_qt/en.ts
 SOURCES += application.cpp \
     ui/maincontroller.cpp \
     ui/liveboardcontroller.cpp \

@@ -32,14 +32,6 @@ Application::Application(int & argc, char ** argv, QString iPlatform, QString iV
     setApplicationName("BeTrains");
     setApplicationVersion(iVersion);
 
-    // Translate the application
-    QTranslator *tApplicationTranslator = new QTranslator();
-    if (! tApplicationTranslator->load(settings().value("application/language", QLocale::system().name()).toString(), ":/i18n_qt"))
-        qWarning() << "! " << "Application translation failed";
-    else
-        qDebug() << "- " << "Application translation succeeded";
-    installTranslator(tApplicationTranslator);
-
     // Construct the controllers
     mMain = new MainController(&mAPI);
     mLiveboard = new LiveboardController(&mAPI);
